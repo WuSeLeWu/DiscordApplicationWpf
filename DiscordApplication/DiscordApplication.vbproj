@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>DiscordApplication</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\146787.jpg" />
+    <None Remove="Images\200x200.jpg" />
+    <None Remove="Images\bilal.jpg" />
+    <None Remove="Images\dclogo.png" />
+    <None Remove="Images\deadpool.jpg" />
+    <None Remove="Images\eren.jpg" />
+    <None Remove="Images\eyup.jpg" />
+    <None Remove="Images\ghost.jpg" />
+    <None Remove="Images\images.jpg" />
+    <None Remove="Images\indir.jpg" />
+    <None Remove="Images\karekod.png" />
+    <None Remove="Images\lionpng.png" />
+    <None Remove="Images\profile.jpg" />
+    <None Remove="Images\profile400x400.jpg" />
+    <None Remove="Images\StrongArmy.png" />
+    <None Remove="Images\ıronman.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\146787.jpg" />
+    <Resource Include="Images\200x200.jpg" />
+    <Resource Include="Images\bilal.jpg" />
+    <Resource Include="Images\dclogo.png" />
+    <Resource Include="Images\deadpool.jpg" />
+    <Resource Include="Images\eren.jpg" />
+    <Resource Include="Images\eyup.jpg" />
+    <Resource Include="Images\ghost.jpg" />
+    <Resource Include="Images\images.jpg" />
+    <Resource Include="Images\indir.jpg" />
+    <Resource Include="Images\karekod.png" />
+    <Resource Include="Images\lionpng.png" />
+    <Resource Include="Images\profile.jpg" />
+    <Resource Include="Images\profile400x400.jpg" />
+    <Resource Include="Images\StrongArmy.png" />
+    <Resource Include="Images\ıronman.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+    <Import Include="System.Windows.Shapes" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="devexpress.wpf.accordion" Version="23.1.6" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="23.1.6" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" Version="23.1.6" />
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+  </ItemGroup>
+</Project>
