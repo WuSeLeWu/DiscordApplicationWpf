@@ -22,6 +22,7 @@
     <None Remove="Images\lionpng.png" />
     <None Remove="Images\profile.jpg" />
     <None Remove="Images\profile400x400.jpg" />
+    <None Remove="Images\profilebackImage.png" />
     <None Remove="Images\StrongArmy.png" />
     <None Remove="Images\ıronman.jpg" />
   </ItemGroup>
@@ -41,6 +42,7 @@
     <Resource Include="Images\lionpng.png" />
     <Resource Include="Images\profile.jpg" />
     <Resource Include="Images\profile400x400.jpg" />
+    <Resource Include="Images\profilebackImage.png" />
     <Resource Include="Images\StrongArmy.png" />
     <Resource Include="Images\ıronman.jpg" />
   </ItemGroup>
