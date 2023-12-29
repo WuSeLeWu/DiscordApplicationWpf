@@ -17,13 +17,13 @@
     WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid
             Grid.Row="0"
-            Margin="10"
-            Background="#202226">
+            Background="#202226"
+            MouseLeftButtonDown="Window_MouseLeftButtonDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
@@ -31,14 +31,14 @@
             </Grid.ColumnDefinitions>
             <TextBlock
                 Grid.Column="0"
-                Margin="5,0,0,0"
+                Margin="15,5,0,0"
                 FontSize="12"
                 FontWeight="BOLD"
                 Foreground="Gray"
                 Text="DISCORD" />
 
             <Grid Grid.Column="2">
-                <DockPanel VerticalAlignment="Center" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+                <DockPanel VerticalAlignment="Center">
                     <Button
                         Margin="5,0,5,0"
                         Background="Transparent"
@@ -359,15 +359,17 @@
                                     </StackPanel>
                                 </DockPanel>
                                 <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                                    <RadioButton
+                                    <CheckBox
+                                        x:Name="checkBoxMic"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
-                                        Click="radioMik_Click">
-                                        <RadioButton.Template>
-                                            <ControlTemplate TargetType="RadioButton">
+                                        Checked="checkBox_Checked"
+                                        Unchecked="checkBox_Unchecked">
+                                        <CheckBox.Template>
+                                            <ControlTemplate TargetType="CheckBox">
                                                 <Grid>
                                                     <fa:ImageAwesome
-                                                        x:Name="radioMik"
+                                                        x:Name="checkMik"
                                                         Width="13"
                                                         Margin="10,0,5,0"
                                                         Cursor="Hand"
@@ -376,28 +378,30 @@
                                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                                 </Grid>
                                             </ControlTemplate>
-                                        </RadioButton.Template>
-                                    </RadioButton>
-                                    <RadioButton
+                                        </CheckBox.Template>
+                                    </CheckBox>
+
+                                    <CheckBox
+                                        x:Name="checkBoxHead"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
-                                        Click="radioHeadphones_Click">
-                                        <RadioButton.Template>
-                                            <ControlTemplate TargetType="RadioButton">
+                                        Checked="checkBoxHead_Checked"
+                                        Unchecked="checkBoxHead_Unchecked">
+                                        <CheckBox.Template>
+                                            <ControlTemplate TargetType="CheckBox">
                                                 <Grid>
                                                     <fa:ImageAwesome
-                                                        x:Name="radioHeadphones"
-                                                        Width="15"
+                                                        x:Name="checkMik"
+                                                        Width="16"
                                                         Margin="10,0,5,0"
                                                         Cursor="Hand"
                                                         Foreground="#dce0e3"
-                                                        Icon="Headphones"
-                                                        MouseLeftButtonUp="radioHeadphones_MouseLeftButtonUp" />
+                                                        Icon="Headphones" />
                                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                                 </Grid>
                                             </ControlTemplate>
-                                        </RadioButton.Template>
-                                    </RadioButton>
+                                        </CheckBox.Template>
+                                    </CheckBox>
 
                                     <Button
                                         Padding="0"

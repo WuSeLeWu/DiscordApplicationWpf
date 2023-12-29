@@ -1,6 +1,8 @@
 ﻿Imports System.Text
 Imports System.Windows.Controls
 Imports System.Windows.Controls.Primitives
+Imports System.Windows.Forms
+Imports FontAwesome.WPF
 
 ''' <summary>
 ''' Interaction logic for MainWindow.xaml
@@ -43,9 +45,37 @@ Public Class MainW
     End Sub
 
 
-    Private Sub radioMik_Click(sender As Object, e As RoutedEventArgs)
-        'If radioMik.IsChecked Then
-        '    radioMik.Foreground = New SolidColorBrush(Color.FromRgb(&H95, &H39, &H3D))
-        'End If
+    Private Sub checkBox_Checked(sender As Object, e As RoutedEventArgs)
+        Dim checkMik As ImageAwesome = TryCast(checkBoxMic.Template.FindName("checkMik", checkBoxMic), ImageAwesome)
+        If checkMik IsNot Nothing Then
+            checkMik.Foreground = Brushes.Red
+            checkMik.Icon = FontAwesomeIcon.MicrophoneSlash
+            checkMik.Width = 15
+        End If
     End Sub
+
+
+    Private Sub checkBox_Unchecked(sender As Object, e As RoutedEventArgs)
+        Dim checkMik As ImageAwesome = TryCast(checkBoxMic.Template.FindName("checkMik", checkBoxMic), ImageAwesome)
+        If checkMik IsNot Nothing Then
+            checkMik.Foreground = New SolidColorBrush(Color.FromRgb(220, 224, 227))
+            checkMik.Icon = FontAwesomeIcon.Microphone
+            checkMik.Width = 13
+        End If
+    End Sub
+
+    Private Sub checkBoxHead_Checked(sender As Object, e As RoutedEventArgs)
+        Dim checkMik As ImageAwesome = TryCast(checkBoxHead.Template.FindName("checkMik", checkBoxHead), ImageAwesome)
+        If checkMik IsNot Nothing Then
+            checkMik.Foreground = Brushes.Red
+        End If
+    End Sub
+
+    Private Sub checkBoxHead_Unchecked(sender As Object, e As RoutedEventArgs)
+        Dim checkMik As ImageAwesome = TryCast(checkBoxHead.Template.FindName("checkMik", checkBoxHead), ImageAwesome)
+        If checkMik IsNot Nothing Then
+            checkMik.Foreground = New SolidColorBrush(Color.FromRgb(220, 224, 227))
+        End If
+    End Sub
+
 End Class
