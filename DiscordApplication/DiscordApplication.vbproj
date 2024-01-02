@@ -10,10 +10,14 @@
   <ItemGroup>
     <None Remove="Images\146787.jpg" />
     <None Remove="Images\200x200.jpg" />
+    <None Remove="Images\arkEklebg.png" />
+    <None Remove="Images\bekleyenbg.png" />
     <None Remove="Images\bilal.jpg" />
     <None Remove="Images\dclogo.png" />
     <None Remove="Images\deadpool.jpg" />
-    <None Remove="Images\eren.jpg" />
+    <None Remove="Images\discordLogo.ico" />
+    <None Remove="Images\engellenenbg.png" />
+	  <None Remove="Images\eren.jpg" />
     <None Remove="Images\eyup.jpg" />
     <None Remove="Images\ghost.jpg" />
     <None Remove="Images\images.jpg" />
@@ -30,9 +34,13 @@
   <ItemGroup>
     <Resource Include="Images\146787.jpg" />
     <Resource Include="Images\200x200.jpg" />
+    <Resource Include="Images\arkEklebg.png" />
+    <Resource Include="Images\bekleyenbg.png" />
     <Resource Include="Images\bilal.jpg" />
     <Resource Include="Images\dclogo.png" />
     <Resource Include="Images\deadpool.jpg" />
+    <Resource Include="Images\discordLogo.ico" />
+    <Resource Include="Images\engellenenbg.png" />
     <Resource Include="Images\eren.jpg" />
     <Resource Include="Images\eyup.jpg" />
     <Resource Include="Images\ghost.jpg" />

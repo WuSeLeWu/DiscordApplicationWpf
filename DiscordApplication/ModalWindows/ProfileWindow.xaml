@@ -3,11 +3,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:DiscordApplication"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ProfileWindow"
-    Width="753"
-    Height="734"
+    Width="600"
+    Height="684"
     AllowsTransparency="True"
     Background="Transparent"
     ResizeMode="NoResize"
@@ -15,11 +17,96 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Grid>
-        <Border>
+        <Border CornerRadius="15">
             <Border.Background>
                 <ImageBrush ImageSource="/Images/profilebackImage.png" />
             </Border.Background>
-
+            <StackPanel>
+                <Border
+                    Margin="15"
+                    Padding="10"
+                    HorizontalAlignment="Right"
+                    Background="#4146AA"
+                    CornerRadius="50">
+                    <fa:ImageAwesome
+                        Width="28"
+                        Foreground="White"
+                        Icon="Pencil" />
+                </Border>
+                <Border
+                    Width="170"
+                    Height="160"
+                    Margin="15,-20"
+                    HorizontalAlignment="Left"
+                    BorderBrush="#232428"
+                    BorderThickness="8"
+                    CornerRadius="80">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/Images/dclogo.png" />
+                    </Border.Background>
+                </Border>
+                <Border
+                    Margin="22,40"
+                    Padding="10"
+                    Background="#111214"
+                    CornerRadius="15">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border
+                            Grid.Row="0"
+                            Margin="0,0,0,20"
+                            Padding="0,0,0,20"
+                            BorderBrush="#2E2F34"
+                            BorderThickness="0,0,0,1">
+                            <StackPanel>
+                                <TextBlock
+                                    Margin="0,0,0,5"
+                                    HorizontalAlignment="Left"
+                                    FontSize="17"
+                                    Foreground="#DBDEE1"
+                                    Text="Joker" />
+                                <TextBlock
+                                    HorizontalAlignment="Left"
+                                    FontSize="12"
+                                    Text="Joker#2765" />
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="1">
+                            <StackPanel>
+                                <TextBlock
+                                    Margin="0,0,0,5"
+                                    HorizontalAlignment="Left"
+                                    FontSize="14"
+                                    Foreground="#DBDEE1"
+                                    Text="ŞU TARİHTEN BERİ DİSCORD ÜYESİ:" />
+                                <TextBlock
+                                    HorizontalAlignment="Left"
+                                    FontSize="12"
+                                    FontWeight="Thin"
+                                    Text="21 Kas 2021" />
+                                <TextBlock
+                                    Margin="0,20,0,5"
+                                    HorizontalAlignment="Left"
+                                    FontSize="14"
+                                    Foreground="#DBDEE1"
+                                    Text="NOT" />
+                                <dxe:TextEdit
+                                    Height="250"
+                                    VerticalContentAlignment="Top"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    FontSize="16"
+                                    Foreground="#91BAB6"
+                                    NullText="Not eklemek için tıkla" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
         </Border>
     </Grid>
 </Window>

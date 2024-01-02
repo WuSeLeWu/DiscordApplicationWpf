@@ -1,0 +1,69 @@
+﻿<UserControl
+    x:Class="ArkadaşEkle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:local="clr-namespace:DiscordApplication"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="auto"
+    Height="auto"
+    mc:Ignorable="d">
+    <StackPanel>
+        <Border
+            Padding="25,20"
+            BorderBrush="#3F4147"
+            BorderThickness="0,0,0,1">
+            <StackPanel>
+                <TextBlock Foreground="#F2F3F5" Text="ARKADAŞ EKLE" />
+                <TextBlock
+                    Margin="0,15"
+                    FontWeight="DemiBold"
+                    Text="Arkadaşlarını Discrod kullanıcı adı ile ekleyebilirsin." />
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <!--  TextEdit genişliği otomatik ayarlanacak  -->
+                        <ColumnDefinition Width="Auto" />
+                        <!--  ImageAwesome genişliği içeriğe göre ayarlanacak  -->
+                    </Grid.ColumnDefinitions>
+
+                    <dxe:TextEdit
+                        Grid.Column="0"
+                        Height="50"
+                        Padding="10,5,170,5"
+                        VerticalAlignment="Center"
+                        Background="#1E1F23"
+                        BorderBrush="Transparent"
+                        BorderThickness="0"
+                        CornerRadius="5"
+                        FontSize="20"
+                        Foreground="White"
+                        NullText="Ara" />
+                    <dx:SimpleButton
+                        Grid.Column="1"
+                        Height="30"
+                        Margin="-160,0,10,0"
+                        Content="Arkadaşlık İsteği Gönder" />
+
+                </Grid>
+
+
+            </StackPanel>
+        </Border>
+        <StackPanel VerticalAlignment="Center">
+            <Image
+                Width="448"
+                Height="283"
+                Margin="0,0,0,40"
+                Source="/Images/arkEklebg.png" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="15"
+                FontWeight="DemiBold"
+                Text="Wumpus arkadaş bekliyor. Mecbur değilsin ama!" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

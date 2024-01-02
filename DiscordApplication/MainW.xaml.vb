@@ -2,6 +2,7 @@
 Imports System.Windows.Controls
 Imports System.Windows.Controls.Primitives
 Imports System.Windows.Forms
+Imports System.Windows.Media.Animation
 Imports FontAwesome.WPF
 
 ''' <summary>
@@ -9,6 +10,18 @@ Imports FontAwesome.WPF
 ''' </summary>
 Public Class MainW
     Inherits Window
+
+    Public Sub New()
+        InitializeComponent()
+        Dim defaultPageType As Type = GetType(MainPage)
+
+        If defaultPageType IsNot Nothing Then
+            Dim defaultPageInstance As Object = Activator.CreateInstance(defaultPageType)
+            MainFrame.Content = defaultPageInstance
+        End If
+
+    End Sub
+
     Private Sub btnMinimize_Click(sender As Object, e As RoutedEventArgs)
         WindowState = WindowState.Minimized
     End Sub
@@ -31,50 +44,18 @@ Public Class MainW
         End If
     End Sub
 
-    Private Sub radioHeadphones_Click(sender As Object, e As RoutedEventArgs)
-        'If radioHeadphones.IsChecked Then
-        '    radioHeadphones.Foreground = New SolidColorBrush(Color.FromRgb(&H95, &H39, &H3D))
-        'End If
-    End Sub
+    Private Sub PageNavigation_Click(sender As Object, e As RoutedEventArgs)
+        Dim clickedRadioButton As Controls.RadioButton = TryCast(sender, Controls.RadioButton)
 
-    Private Sub radioHeadphones_MouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs)
-        'Dim imageAwesome As fa.ImageAwesome = TryCast(sender, fa.ImageAwesome)
-        'If imageAwesome IsNot Nothing Then
-        '    imageAwesome.Foreground = New SolidColorBrush(Color.FromRgb(&H95, &H39, &H3D))
-        'End If
-    End Sub
+        If clickedRadioButton IsNot Nothing Then
+            Dim userControlType As Type = Type.GetType("DiscordApplication." & clickedRadioButton.Name)
 
-
-    Private Sub checkBox_Checked(sender As Object, e As RoutedEventArgs)
-        Dim checkMik As ImageAwesome = TryCast(checkBoxMic.Template.FindName("checkMik", checkBoxMic), ImageAwesome)
-        If checkMik IsNot Nothing Then
-            checkMik.Foreground = Brushes.Red
-            checkMik.Icon = FontAwesomeIcon.MicrophoneSlash
-            checkMik.Width = 15
-        End If
-    End Sub
-
-
-    Private Sub checkBox_Unchecked(sender As Object, e As RoutedEventArgs)
-        Dim checkMik As ImageAwesome = TryCast(checkBoxMic.Template.FindName("checkMik", checkBoxMic), ImageAwesome)
-        If checkMik IsNot Nothing Then
-            checkMik.Foreground = New SolidColorBrush(Color.FromRgb(220, 224, 227))
-            checkMik.Icon = FontAwesomeIcon.Microphone
-            checkMik.Width = 13
-        End If
-    End Sub
-
-    Private Sub checkBoxHead_Checked(sender As Object, e As RoutedEventArgs)
-        Dim checkMik As ImageAwesome = TryCast(checkBoxHead.Template.FindName("checkMik", checkBoxHead), ImageAwesome)
-        If checkMik IsNot Nothing Then
-            checkMik.Foreground = Brushes.Red
-        End If
-    End Sub
-
-    Private Sub checkBoxHead_Unchecked(sender As Object, e As RoutedEventArgs)
-        Dim checkMik As ImageAwesome = TryCast(checkBoxHead.Template.FindName("checkMik", checkBoxHead), ImageAwesome)
-        If checkMik IsNot Nothing Then
-            checkMik.Foreground = New SolidColorBrush(Color.FromRgb(220, 224, 227))
+            If userControlType IsNot Nothing Then
+                Dim userControlInstance As Object = Activator.CreateInstance(userControlType)
+                MainFrame.Content = userControlInstance
+            Else
+                ' UserControl tipi bulunamadı veya yaratılamadı
+            End If
         End If
     End Sub
 

@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="Bekleyen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DiscordApplication"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="auto"
+    Height="auto"
+    mc:Ignorable="d">
+    <StackPanel VerticalAlignment="Center">
+        <Image Margin="0,0,0,40" Source="/Images/bekleyenbg.png" Width="448" Height="283"/>
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="15"
+            FontWeight="DemiBold"
+            Text="Bekleyen arkadaşlık isteği yok. Şimdilik işte Wumpus." />
+    </StackPanel>
+</UserControl>

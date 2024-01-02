@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="Engellenen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DiscordApplication"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="auto"
+    Height="auto"
+    mc:Ignorable="d">
+    <StackPanel VerticalAlignment="Center">
+        <Image
+            Width="448"
+            Height="283"
+            Margin="0,0,0,40"
+            Source="/Images/engellenenbg.png" />
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="15"
+            FontWeight="DemiBold"
+            Text="Wumpus'un engelini kaldıramazsın." />
+    </StackPanel>
+</UserControl>

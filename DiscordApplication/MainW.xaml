@@ -12,6 +12,7 @@
     Height="760"
     AllowsTransparency="True"
     Background="#202226"
+    Icon="Images/discordLogo.ico"
     ResizeMode="CanResizeWithGrip"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None">
@@ -76,7 +77,10 @@
                 </DockPanel>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid
+            x:Name="mainGrid"
+            Grid.Row="1"
+            Opacity="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
@@ -87,24 +91,59 @@
                 Padding="15,5,5,5"
                 Background="#202226">
                 <Grid>
-                    <Border
-                        Height="65"
-                        Padding="0,0,0,8"
-                        VerticalAlignment="Top"
-                        BorderBrush="#404146"
-                        BorderThickness="0,0,0,2">
+                    <StackPanel>
                         <Border
-                            Width="50"
-                            Height="50"
-                            CornerRadius="50">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Images/dclogo.png" />
-                            </Border.Background>
+                            Height="65"
+                            Padding="0,0,0,8"
+                            VerticalAlignment="Top"
+                            BorderBrush="#404146"
+                            BorderThickness="0,0,0,2">
+                            <RadioButton
+                                x:Name="MainPage"
+                                Width="50"
+                                Height="50"
+                                Padding="0,0,0,8"
+                                VerticalAlignment="Top"
+                                BorderBrush="Transparent"
+                                Click="PageNavigation_Click"
+                                Cursor="Hand">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <ContentPresenter
+                                                Margin="10,5"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                                <RadioButton.Background>
+                                    <ImageBrush ImageSource="/Images/dclogo.png" />
+                                </RadioButton.Background>
+                            </RadioButton>
                         </Border>
-                    </Border>
 
-
-                    <StackPanel Margin="0,70,0,0">
+                        <RadioButton
+                            x:Name="ServerPageStrongArmy"
+                            Width="60"
+                            Margin="5,10"
+                            Click="PageNavigation_Click">
+                            <RadioButton.Template>
+                                <ControlTemplate TargetType="{x:Type RadioButton}">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <Border Style="{StaticResource SunucuImage}">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Images/StrongArmy.png" />
+                                            </Border.Background>
+                                        </Border>
+                                        <ContentPresenter
+                                            Margin="10,5"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </RadioButton.Template>
+                        </RadioButton>
                         <Border Style="{StaticResource SunucuImage}">
                             <Border.Background>
                                 <ImageBrush ImageSource="/Images/StrongArmy.png" />
@@ -135,542 +174,26 @@
                         </Border>
                         <Border Background="#2f3135" Style="{StaticResource SunucuImage}">
                             <fa:ImageAwesome
-                                Width="20"
-                                Height="20"
+                                Width="30"
+                                Height="30"
                                 Foreground="Green"
-                                Icon="Plus" />
+                                Icon="Safari" />
                         </Border>
                     </StackPanel>
+
+
                 </Grid>
             </Border>
 
             <Border
                 Grid.Column="1"
                 Margin="8,0,0,0"
-                Background="#35383e"
+                Background="#313338"
                 CornerRadius="15,0,0,0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="250" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" Background="#2f3137">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-
-                        <Border
-                            Grid.Row="0"
-                            Padding="10"
-                            CornerRadius="15,0,0,0">
-                            <StackPanel>
-                                <dxe:TextEdit
-                                    Margin="0,0,0,15"
-                                    Padding="5"
-                                    Background="#1E1F23"
-                                    BorderBrush="Transparent"
-                                    BorderThickness="0"
-                                    CornerRadius="5"
-                                    Foreground="White"
-                                    NullText="Sohbet bul ya da başlat" />
-                                <DockPanel Style="{StaticResource MenuDockPanel}">
-                                    <fa:ImageAwesome
-                                        Width="15"
-                                        Margin="10"
-                                        Foreground="#8E8F96"
-                                        Icon="User" />
-                                    <TextBlock Margin="10" Text="Arkadaşlar" />
-                                </DockPanel>
-                                <DockPanel Style="{StaticResource MenuDockPanel}">
-                                    <fa:ImageAwesome
-                                        Width="15"
-                                        Margin="10"
-                                        Foreground="#8E8F96"
-                                        Icon="Rocket" />
-                                    <TextBlock Margin="10" Text="Nitro" />
-                                </DockPanel>
-                                <DockPanel Style="{StaticResource MenuDockPanel}">
-                                    <fa:ImageAwesome
-                                        Width="15"
-                                        Margin="10"
-                                        Foreground="#8E8F96"
-                                        Icon="Building" />
-                                    <TextBlock Margin="10" Text="Mağaza" />
-                                </DockPanel>
-                            </StackPanel>
-                        </Border>
-
-                        <Border Grid.Row="1">
-                            <StackPanel>
-                                <dxa:AccordionControl Margin="0,10" Background="Transparent">
-                                    <dxa:AccordionItem Header="DİREKT MESAJLAR" IsExpanded="True">
-                                        <DockPanel Margin="-15,0,0,0">
-                                            <Border
-                                                Width="40"
-                                                Height="40"
-                                                CornerRadius="50">
-                                                <Border.Background>
-                                                    <ImageBrush ImageSource="/Images/eren.jpg" />
-                                                </Border.Background>
-                                            </Border>
-                                            <TextBlock
-                                                Width="auto"
-                                                Padding="0"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                Style="{StaticResource ProfileTextBox}"
-                                                Text="Eren" />
-                                        </DockPanel>
-                                        <DockPanel Margin="-15,0,0,0">
-                                            <Border
-                                                Width="40"
-                                                Height="40"
-                                                CornerRadius="50">
-                                                <Border.Background>
-                                                    <ImageBrush ImageSource="/Images/bilal.jpg" />
-                                                </Border.Background>
-                                            </Border>
-                                            <TextBlock
-                                                Width="auto"
-                                                Padding="0"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                Style="{StaticResource ProfileTextBox}"
-                                                Text="Bilal" />
-                                        </DockPanel>
-                                        <DockPanel Margin="-15,0,0,0">
-                                            <Border
-                                                Width="40"
-                                                Height="40"
-                                                CornerRadius="50">
-                                                <Border.Background>
-                                                    <ImageBrush ImageSource="/Images/ıronman.jpg" />
-                                                </Border.Background>
-                                            </Border>
-                                            <TextBlock
-                                                Width="auto"
-                                                Padding="0"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                Style="{StaticResource ProfileTextBox}"
-                                                Text="Ege" />
-                                        </DockPanel>
-                                        <DockPanel Margin="-15,0,0,0">
-                                            <Border
-                                                Width="40"
-                                                Height="40"
-                                                CornerRadius="50">
-                                                <Border.Background>
-                                                    <ImageBrush ImageSource="/Images/eyup.jpg" />
-                                                </Border.Background>
-                                            </Border>
-                                            <TextBlock
-                                                Width="auto"
-                                                Padding="0"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                Style="{StaticResource ProfileTextBox}"
-                                                Text="Eyüp" />
-                                        </DockPanel>
-                                        <DockPanel Margin="-15,0,0,0">
-                                            <Border
-                                                Width="40"
-                                                Height="40"
-                                                CornerRadius="50">
-                                                <Border.Background>
-                                                    <ImageBrush ImageSource="/Images/profile.jpg" />
-                                                </Border.Background>
-                                            </Border>
-                                            <TextBlock
-                                                Width="auto"
-                                                Padding="0"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                Style="{StaticResource ProfileTextBox}"
-                                                Text="Hakan" />
-                                        </DockPanel>
-                                        <DockPanel Margin="-15,0,0,0">
-                                            <Border
-                                                Width="40"
-                                                Height="40"
-                                                CornerRadius="50">
-                                                <Border.Background>
-                                                    <ImageBrush ImageSource="/Images/ghost.jpg" />
-                                                </Border.Background>
-                                            </Border>
-                                            <TextBlock
-                                                Width="auto"
-                                                Padding="0"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                Style="{StaticResource ProfileTextBox}"
-                                                Text="Fatih" />
-                                        </DockPanel>
-                                        <DockPanel Margin="-15,0,0,0">
-                                            <Border
-                                                Width="40"
-                                                Height="40"
-                                                CornerRadius="50">
-                                                <Border.Background>
-                                                    <ImageBrush ImageSource="/Images/deadpool.jpg" />
-                                                </Border.Background>
-                                            </Border>
-                                            <TextBlock
-                                                Width="auto"
-                                                Padding="0"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                Style="{StaticResource ProfileTextBox}"
-                                                Text="Emre" />
-                                        </DockPanel>
-                                    </dxa:AccordionItem>
-                                </dxa:AccordionControl>
-
-                            </StackPanel>
-                        </Border>
-
-                        <Border
-                            Grid.Row="2"
-                            Padding="0,0,0,15"
-                            Background="#292B2F">
-                            <Grid>
-                                <DockPanel HorizontalAlignment="Left">
-                                    <Border
-                                        Width="40"
-                                        Height="40"
-                                        CornerRadius="50">
-                                        <Border.Background>
-                                            <ImageBrush ImageSource="Images/profile400x400.jpg" />
-                                        </Border.Background>
-                                    </Border>
-                                    <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
-                                        <TextBlock
-                                            FontSize="18"
-                                            FontWeight="Bold"
-                                            Foreground="#dce0e3"
-                                            Text="Joker" />
-                                        <TextBlock
-                                            FontSize="14"
-                                            FontWeight="Bold"
-                                            Foreground="Gray"
-                                            Text="#0000" />
-                                    </StackPanel>
-                                </DockPanel>
-                                <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                                    <CheckBox
-                                        x:Name="checkBoxMic"
-                                        HorizontalContentAlignment="Center"
-                                        VerticalContentAlignment="Center"
-                                        Checked="checkBox_Checked"
-                                        Unchecked="checkBox_Unchecked">
-                                        <CheckBox.Template>
-                                            <ControlTemplate TargetType="CheckBox">
-                                                <Grid>
-                                                    <fa:ImageAwesome
-                                                        x:Name="checkMik"
-                                                        Width="13"
-                                                        Margin="10,0,5,0"
-                                                        Cursor="Hand"
-                                                        Foreground="#dce0e3"
-                                                        Icon="Microphone" />
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                </Grid>
-                                            </ControlTemplate>
-                                        </CheckBox.Template>
-                                    </CheckBox>
-
-                                    <CheckBox
-                                        x:Name="checkBoxHead"
-                                        HorizontalContentAlignment="Center"
-                                        VerticalContentAlignment="Center"
-                                        Checked="checkBoxHead_Checked"
-                                        Unchecked="checkBoxHead_Unchecked">
-                                        <CheckBox.Template>
-                                            <ControlTemplate TargetType="CheckBox">
-                                                <Grid>
-                                                    <fa:ImageAwesome
-                                                        x:Name="checkMik"
-                                                        Width="16"
-                                                        Margin="10,0,5,0"
-                                                        Cursor="Hand"
-                                                        Foreground="#dce0e3"
-                                                        Icon="Headphones" />
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                </Grid>
-                                            </ControlTemplate>
-                                        </CheckBox.Template>
-                                    </CheckBox>
-
-                                    <Button
-                                        Padding="0"
-                                        Background="Transparent"
-                                        BorderThickness="0">
-                                        <fa:ImageAwesome
-                                            Width="15"
-                                            Margin="10,0,5,0"
-                                            Cursor="Hand"
-                                            Foreground="#dce0e3"
-                                            Icon="Gear" />
-                                    </Button>
-
-
-                                </DockPanel>
-                            </Grid>
-                        </Border>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Border
-                                Padding="5"
-                                BorderBrush="#404146"
-                                BorderThickness="0,0,0,1">
-                                <DockPanel>
-                                    <Border
-                                        Width="150"
-                                        HorizontalAlignment="Left"
-                                        VerticalAlignment="Center"
-                                        BorderBrush="#8E8F96"
-                                        BorderThickness="0,0,1,0">
-                                        <DockPanel>
-                                            <fa:ImageAwesome
-                                                Width="15"
-                                                Margin="10"
-                                                Foreground="#DAE1DD"
-                                                Icon="User" />
-                                            <TextBlock
-                                                Margin="10"
-                                                Foreground="#DAE1DD"
-                                                Text="Arkadaşlar" />
-                                        </DockPanel>
-                                    </Border>
-                                    <StackPanel Orientation="Horizontal">
-                                        <ToggleButton Margin="5,10" Content="Çevrimiçi" />
-                                        <ToggleButton Margin="5,10" Content="Tümü" />
-                                        <ToggleButton Margin="5,10" Content="Bekleyen" />
-                                        <ToggleButton Margin="5,10" Content="Engellenen" />
-                                    </StackPanel>
-                                    <TextBlock
-                                        Width="90"
-                                        Margin="15,0,15,0"
-                                        Padding="5"
-                                        HorizontalAlignment="Left"
-                                        VerticalAlignment="Center"
-                                        Background="Green"
-                                        Cursor="Hand"
-                                        Foreground="#DAE1DD"
-                                        Text="Arkadaş Ekle" />
-                                    <DockPanel Margin="0,0,20,0" HorizontalAlignment="Right">
-                                        <fa:ImageAwesome
-                                            Width="20"
-                                            Margin="10,0"
-                                            Icon="Comment"
-                                            Style="{StaticResource HeaderRightIcon}" />
-                                        <fa:ImageAwesome
-                                            Width="20"
-                                            Margin="10,0"
-                                            Icon="Dropbox"
-                                            Style="{StaticResource HeaderRightIcon}" />
-                                        <fa:ImageAwesome
-                                            Width="20"
-                                            Margin="10,0"
-                                            Icon="QuestionCircle"
-                                            Style="{StaticResource HeaderRightIcon}" />
-                                    </DockPanel>
-                                </DockPanel>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition Width="300" />
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Padding="20,10,15,0">
-                                <Grid>
-                                    <StackPanel>
-                                        <Border
-                                            Margin="0,0,0,20"
-                                            Padding="5,0"
-                                            VerticalAlignment="Top"
-                                            Background="#1E1F23"
-                                            CornerRadius="5">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition />
-                                                    <ColumnDefinition Width="auto" />
-                                                </Grid.ColumnDefinitions>
-
-                                                <dxe:TextEdit
-                                                    Grid.Column="0"
-                                                    Height="30"
-                                                    Padding="5"
-                                                    Background="Transparent"
-                                                    BorderBrush="Transparent"
-                                                    BorderThickness="0"
-                                                    Foreground="White"
-                                                    NullText="Ara" />
-                                                <fa:ImageAwesome
-                                                    Grid.Column="1"
-                                                    Width="15"
-                                                    HorizontalAlignment="Left"
-                                                    VerticalAlignment="Center"
-                                                    Icon="Search"
-                                                    Style="{StaticResource HeaderRightIcon}" />
-
-                                            </Grid>
-                                        </Border>
-                                        <TextBlock FontSize="11" Text="ÇEVRİM İÇİ - 2" />
-                                        <Border
-                                            Margin="0,15,0,0"
-                                            BorderBrush="#404146"
-                                            BorderThickness="0,1,0,0">
-                                            <StackPanel>
-                                                <Border Padding="10" Style="{StaticResource MerkezHoverEffect}">
-                                                    <Grid>
-                                                        <DockPanel HorizontalAlignment="Left">
-                                                            <Border
-                                                                Width="40"
-                                                                Height="40"
-                                                                CornerRadius="50">
-                                                                <Border.Background>
-                                                                    <ImageBrush ImageSource="/Images/bilal.jpg" />
-                                                                </Border.Background>
-                                                            </Border>
-                                                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
-                                                                <TextBlock
-                                                                    FontSize="14"
-                                                                    FontWeight="Bold"
-                                                                    Foreground="#dce0e3"
-                                                                    Text="Bilal" />
-                                                                <TextBlock
-                                                                    FontSize="11"
-                                                                    FontWeight="Bold"
-                                                                    Foreground="Gray"
-                                                                    Text="Çevrim içi" />
-                                                            </StackPanel>
-                                                        </DockPanel>
-                                                        <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                                                            <Border
-                                                                Margin="10,0"
-                                                                Padding="10,0"
-                                                                Background="#2C2D31"
-                                                                CornerRadius="50">
-                                                                <fa:ImageAwesome
-                                                                    Height="15"
-                                                                    Icon="Comment"
-                                                                    Style="{StaticResource HeaderRightIcon}" />
-                                                            </Border>
-                                                            <Border
-                                                                Padding="10"
-                                                                Background="#2C2D31"
-                                                                CornerRadius="50">
-                                                                <fa:ImageAwesome
-                                                                    Width="15"
-                                                                    Height="15"
-                                                                    HorizontalAlignment="Center"
-                                                                    Icon="EllipsisV"
-                                                                    Style="{StaticResource HeaderRightIcon}" />
-                                                            </Border>
-
-
-                                                        </DockPanel>
-                                                    </Grid>
-                                                </Border>
-                                                <Border Padding="10" Style="{StaticResource MerkezHoverEffect}">
-                                                    <Grid>
-                                                        <DockPanel HorizontalAlignment="Left">
-                                                            <Border
-                                                                Width="40"
-                                                                Height="40"
-                                                                CornerRadius="50">
-                                                                <Border.Background>
-                                                                    <ImageBrush ImageSource="Images/eren.jpg" />
-                                                                </Border.Background>
-                                                            </Border>
-                                                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
-                                                                <TextBlock
-                                                                    FontSize="14"
-                                                                    FontWeight="Bold"
-                                                                    Foreground="#dce0e3"
-                                                                    Text="Eren" />
-                                                                <TextBlock
-                                                                    FontSize="11"
-                                                                    FontWeight="Bold"
-                                                                    Foreground="Gray"
-                                                                    Text="Boşta" />
-                                                            </StackPanel>
-                                                        </DockPanel>
-                                                        <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                                                            <Border
-                                                                Margin="10,0"
-                                                                Padding="10,0"
-                                                                Background="#2C2D31"
-                                                                CornerRadius="50">
-                                                                <fa:ImageAwesome
-                                                                    Height="15"
-                                                                    Icon="Comment"
-                                                                    Style="{StaticResource HeaderRightIcon}" />
-                                                            </Border>
-                                                            <Border
-                                                                Padding="10"
-                                                                Background="#2C2D31"
-                                                                CornerRadius="50">
-                                                                <fa:ImageAwesome
-                                                                    Width="15"
-                                                                    Height="15"
-                                                                    HorizontalAlignment="Center"
-                                                                    Icon="EllipsisV"
-                                                                    Style="{StaticResource HeaderRightIcon}" />
-                                                            </Border>
-
-
-                                                        </DockPanel>
-                                                    </Grid>
-                                                </Border>
-                                            </StackPanel>
-
-                                        </Border>
-
-
-                                    </StackPanel>
-                                </Grid>
-                            </Border>
-                            <Border
-                                Grid.Column="1"
-                                BorderBrush="#404146"
-                                BorderThickness="1,0,0,0">
-                                <StackPanel Margin="0,0,20,0">
-                                    <TextBlock
-                                        Margin="10"
-                                        FontSize="16"
-                                        FontWeight="bold"
-                                        Foreground="#DAE1DD"
-                                        Text="Şimdi Aktif" />
-                                    <TextBlock
-                                        Margin="10"
-                                        HorizontalAlignment="Center"
-                                        FontSize="14"
-                                        FontWeight="bold"
-                                        Foreground="#DAE1DD"
-                                        Text="Burası Şimdilik Sessiz..." />
-                                    <TextBlock
-                                        Margin="0"
-                                        HorizontalAlignment="Center"
-                                        FontSize="13"
-                                        FontWeight="Normal"
-                                        Foreground="#8E8F96"
-                                        Text="Bir arkadaşın, oyun oynamak veya bir sesli sohbete katılmak gibi bir etinliğie başladığında burada göstereceğiz!"
-                                        TextWrapping="Wrap" />
-                                </StackPanel>
-                            </Border>
-                        </Grid>
-                    </Grid>
-                </Grid>
+                <Frame
+                    x:Name="MainFrame"
+                    Grid.Column="1"
+                    NavigationUIVisibility="Hidden" />
             </Border>
         </Grid>
     </Grid>
