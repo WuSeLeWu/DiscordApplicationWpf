@@ -11,4 +11,8 @@ Public Class ProfileWindow
         Dim animation As New DoubleAnimation(0, 1, New Duration(TimeSpan.FromSeconds(0.7)))
         Me.BeginAnimation(UIElement.OpacityProperty, animation)
     End Sub
+
+    Private Sub Close_Click(sender As Object, e As RoutedEventArgs)
+        Me.Close()
+    End Sub
 End Class

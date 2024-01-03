@@ -17,7 +17,7 @@
             <ColumnDefinition Width="250" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Background="#2B2D31">
+        <Grid Grid.Column="0">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -28,10 +28,13 @@
                 x:Name="serverScroll"
                 MinHeight="675"
                 VerticalScrollBarVisibility="Auto">
-                <Border Grid.Row="0" CornerRadius="15,0,0,0">
+                <Border
+                    Grid.Row="0"
+                    Background="#2B2D31"
+                    CornerRadius="15,0,0,0">
                     <StackPanel>
                         <StackPanel>
-                            <Border Height="165">
+                            <Border Height="165" CornerRadius="15,0,0,0">
                                 <Border.Background>
                                     <ImageBrush ImageSource="/Images/200x200.jpg" />
                                 </Border.Background>
@@ -379,7 +382,7 @@
                                     Foreground="#949BA4"
                                     Header="ADMİN - 1"
                                     IsExpanded="True">
-                                    <DockPanel Margin="-18,0,0,0" Style="{StaticResource MenuDockPanel}">
+                                    <DockPanel Margin="-18,0,0,0">
                                         <Ellipse Width="40" Height="40">
                                             <Ellipse.Fill>
                                                 <ImageBrush ImageSource="/Images/baby.jpg" />

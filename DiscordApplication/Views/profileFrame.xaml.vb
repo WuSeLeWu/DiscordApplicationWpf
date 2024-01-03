@@ -11,7 +11,7 @@ Public Class profileFrame
 
     Private Sub ProfileOpen_Click(sender As Object, e As RoutedEventArgs)
         profileWindow = New ProfileWindow()
-        profileWindow.Show()
+        profileWindow.ShowDialog()
     End Sub
     Private Sub checkBox_Checked(sender As Object, e As RoutedEventArgs)
         Dim checkMik As ImageAwesome = TryCast(checkBoxMic.Template.FindName("checkMik", checkBoxMic), ImageAwesome)
