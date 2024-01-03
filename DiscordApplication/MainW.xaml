@@ -146,11 +146,6 @@
                         </RadioButton>
                         <Border Style="{StaticResource SunucuImage}">
                             <Border.Background>
-                                <ImageBrush ImageSource="/Images/StrongArmy.png" />
-                            </Border.Background>
-                        </Border>
-                        <Border Style="{StaticResource SunucuImage}">
-                            <Border.Background>
                                 <ImageBrush ImageSource="/Images/146787.jpg" />
                             </Border.Background>
                         </Border>

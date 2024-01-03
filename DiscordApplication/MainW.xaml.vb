@@ -29,8 +29,10 @@ Public Class MainW
     Private Sub BtnMaximize_Click(sender As Object, e As RoutedEventArgs)
         If WindowState = WindowState.Maximized Then
             WindowState = WindowState.Normal
+
         Else
             WindowState = WindowState.Maximized
+
         End If
     End Sub
 

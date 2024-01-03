@@ -42,7 +42,7 @@
                     BorderThickness="8"
                     CornerRadius="80">
                     <Border.Background>
-                        <ImageBrush ImageSource="/Images/dclogo.png" />
+                        <ImageBrush ImageSource="/Images/baby.jpg" />
                     </Border.Background>
                 </Border>
                 <Border
@@ -67,11 +67,11 @@
                                     HorizontalAlignment="Left"
                                     FontSize="17"
                                     Foreground="#DBDEE1"
-                                    Text="Joker" />
+                                    Text="WuSeLeWu" />
                                 <TextBlock
                                     HorizontalAlignment="Left"
                                     FontSize="12"
-                                    Text="Joker#2765" />
+                                    Text="WuSeLeWu#0000" />
                             </StackPanel>
                         </Border>
                         <Border Grid.Row="1">
@@ -86,7 +86,7 @@
                                     HorizontalAlignment="Left"
                                     FontSize="12"
                                     FontWeight="Thin"
-                                    Text="21 Kas 2021" />
+                                    Text="21 Kas 2016" />
                                 <TextBlock
                                     Margin="0,20,0,5"
                                     HorizontalAlignment="Left"
@@ -101,7 +101,8 @@
                                     BorderThickness="0"
                                     FontSize="16"
                                     Foreground="#91BAB6"
-                                    NullText="Not eklemek için tıkla" />
+                                    NullText="GitHub/WuSeLeWu"
+                                    NullTextForeground="#DBDEE1" />
                             </StackPanel>
                         </Border>
                     </Grid>

@@ -1,0 +1,102 @@
+﻿<UserControl
+    x:Class="profileFrame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:DiscordApplication"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="auto"
+    Height="auto"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Button
+            HorizontalAlignment="Left"
+            Background="Transparent"
+            BorderThickness="0"
+            Click="ProfileOpen_Click">
+            <DockPanel HorizontalAlignment="Left">
+                <Border
+                    Width="40"
+                    Height="40"
+                    CornerRadius="50">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/Images/baby.jpg" />
+                    </Border.Background>
+                </Border>
+                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                    <TextBlock
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Foreground="#dce0e3"
+                        Text="WuSeLeWu" />
+                    <TextBlock
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Foreground="Gray"
+                        Text="#0000" />
+                </StackPanel>
+            </DockPanel>
+        </Button>
+        <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+            <CheckBox
+                x:Name="checkBoxMic"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Checked="checkBox_Checked"
+                Unchecked="checkBox_Unchecked">
+                <CheckBox.Template>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <fa:ImageAwesome
+                                x:Name="checkMik"
+                                Width="13"
+                                Margin="10,0,5,0"
+                                Cursor="Hand"
+                                Foreground="#dce0e3"
+                                Icon="Microphone" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </CheckBox.Template>
+            </CheckBox>
+
+            <CheckBox
+                x:Name="checkBoxHead"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Checked="checkBoxHead_Checked"
+                Unchecked="checkBoxHead_Unchecked">
+                <CheckBox.Template>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <fa:ImageAwesome
+                                x:Name="checkMik"
+                                Width="16"
+                                Margin="10,0,5,0"
+                                Cursor="Hand"
+                                Foreground="#dce0e3"
+                                Icon="Headphones" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </CheckBox.Template>
+            </CheckBox>
+
+            <Button
+                Padding="0"
+                Background="Transparent"
+                BorderThickness="0">
+                <fa:ImageAwesome
+                    Width="15"
+                    Margin="10,0,5,0"
+                    Cursor="Hand"
+                    Foreground="#dce0e3"
+                    Icon="Gear" />
+            </Button>
+
+
+        </DockPanel>
+    </Grid>
+</UserControl>

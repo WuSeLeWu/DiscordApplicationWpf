@@ -170,7 +170,7 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     Style="{StaticResource ProfileTextBox}"
-                                    Text="Fatih" />
+                                    Text="Omer" />
                             </DockPanel>
                             <DockPanel Margin="-15,0,0,0">
                                 <Border
@@ -189,6 +189,23 @@
                                     Style="{StaticResource ProfileTextBox}"
                                     Text="Emre" />
                             </DockPanel>
+                            <DockPanel Margin="-15,0,0,0">
+                                <Border
+                                    Width="40"
+                                    Height="40"
+                                    CornerRadius="50">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/Images/fatih.png" />
+                                    </Border.Background>
+                                </Border>
+                                <TextBlock
+                                    Width="auto"
+                                    Padding="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Style="{StaticResource ProfileTextBox}"
+                                    Text="Blaine" />
+                            </DockPanel>
                         </dxa:AccordionItem>
                     </dxa:AccordionControl>
 
@@ -198,97 +215,13 @@
             <Border
                 Grid.Row="2"
                 Padding="0,0,0,15"
-                Background="#292B2F"
+                Background="#232428"
                 Cursor="Hand">
-                <Grid>
-                    <Button
-                        HorizontalAlignment="Left"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Click="ProfileOpen_Click">
-                        <DockPanel HorizontalAlignment="Left">
-                            <Border
-                                Width="40"
-                                Height="40"
-                                CornerRadius="50">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="/Images/profile400x400.jpg" />
-                                </Border.Background>
-                            </Border>
-                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
-                                <TextBlock
-                                    FontSize="18"
-                                    FontWeight="Bold"
-                                    Foreground="#dce0e3"
-                                    Text="Joker" />
-                                <TextBlock
-                                    FontSize="14"
-                                    FontWeight="Bold"
-                                    Foreground="Gray"
-                                    Text="#0000" />
-                            </StackPanel>
-                        </DockPanel>
-                    </Button>
-                    <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <CheckBox
-                            x:Name="checkBoxMic"
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Checked="checkBox_Checked"
-                            Unchecked="checkBox_Unchecked">
-                            <CheckBox.Template>
-                                <ControlTemplate TargetType="CheckBox">
-                                    <Grid>
-                                        <fa:ImageAwesome
-                                            x:Name="checkMik"
-                                            Width="13"
-                                            Margin="10,0,5,0"
-                                            Cursor="Hand"
-                                            Foreground="#dce0e3"
-                                            Icon="Microphone" />
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Grid>
-                                </ControlTemplate>
-                            </CheckBox.Template>
-                        </CheckBox>
+                <Frame
+                    x:Name="ProfileFrame"
+                    Grid.Column="1"
+                    NavigationUIVisibility="Hidden" />
 
-                        <CheckBox
-                            x:Name="checkBoxHead"
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Checked="checkBoxHead_Checked"
-                            Unchecked="checkBoxHead_Unchecked">
-                            <CheckBox.Template>
-                                <ControlTemplate TargetType="CheckBox">
-                                    <Grid>
-                                        <fa:ImageAwesome
-                                            x:Name="checkMik"
-                                            Width="16"
-                                            Margin="10,0,5,0"
-                                            Cursor="Hand"
-                                            Foreground="#dce0e3"
-                                            Icon="Headphones" />
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Grid>
-                                </ControlTemplate>
-                            </CheckBox.Template>
-                        </CheckBox>
-
-                        <Button
-                            Padding="0"
-                            Background="Transparent"
-                            BorderThickness="0">
-                            <fa:ImageAwesome
-                                Width="15"
-                                Margin="10,0,5,0"
-                                Cursor="Hand"
-                                Foreground="#dce0e3"
-                                Icon="Gear" />
-                        </Button>
-
-
-                    </DockPanel>
-                </Grid>
             </Border>
         </Grid>
         <Grid Grid.Column="1">
@@ -322,9 +255,10 @@
                         </Border>
                         <StackPanel Orientation="Horizontal">
                             <RadioButton
+                                x:Name="Çevrimiçi"
                                 Margin="5,10"
                                 Click="PageNavigation_Click"
-                                Content="Çevrimiçi">
+                                Content="Çevrim içi">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="{x:Type RadioButton}">
                                         <Grid Background="{TemplateBinding Background}">
@@ -337,6 +271,7 @@
                                 </RadioButton.Template>
                             </RadioButton>
                             <RadioButton
+                                x:Name="Tümü"
                                 Margin="5,10"
                                 Click="PageNavigation_Click"
                                 Content="Tümü">
@@ -352,6 +287,7 @@
                                 </RadioButton.Template>
                             </RadioButton>
                             <RadioButton
+                                x:Name="Bekleyen"
                                 Margin="5,10"
                                 Click="PageNavigation_Click"
                                 Content="Bekleyen">
@@ -367,6 +303,7 @@
                                 </RadioButton.Template>
                             </RadioButton>
                             <RadioButton
+                                x:Name="Engellenen"
                                 Margin="5,10"
                                 Click="PageNavigation_Click"
                                 Content="Engellenen">
@@ -382,10 +319,11 @@
                                 </RadioButton.Template>
                             </RadioButton>
                             <RadioButton
+                                x:Name="ArkadaşEkle"
                                 VerticalAlignment="Center"
                                 Background="Green"
                                 Click="PageNavigation_Click"
-                                Content="ArkadaşEkle">
+                                Content="Arkadaş Ekle">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="{x:Type RadioButton}">
                                         <Grid Background="{TemplateBinding Background}">

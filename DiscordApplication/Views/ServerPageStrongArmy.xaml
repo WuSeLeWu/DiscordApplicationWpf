@@ -17,15 +17,19 @@
             <ColumnDefinition Width="250" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Background="#2f3137">
+        <Grid Grid.Column="0" Background="#2B2D31">
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <ScrollViewer Height="750" VerticalScrollBarVisibility="auto">
-                <StackPanel>
-                    <Border Grid.Row="0" CornerRadius="15,0,0,0">
+
+            <ScrollViewer
+                x:Name="serverScroll"
+                MinHeight="675"
+                VerticalScrollBarVisibility="Auto">
+                <Border Grid.Row="0" CornerRadius="15,0,0,0">
+                    <StackPanel>
                         <StackPanel>
                             <Border Height="165">
                                 <Border.Background>
@@ -50,6 +54,10 @@
                                     </DockPanel>
                                 </dxa:AccordionControl>
                             </Border>
+
+
+                        </StackPanel>
+                        <StackPanel>
                             <Border
                                 Margin="8,10"
                                 Padding="5"
@@ -58,7 +66,7 @@
                                 <StackPanel>
                                     <DockPanel Style="{StaticResource MenuDockPanel}">
                                         <fa:ImageAwesome
-                                            Width="15"
+                                            Width="13"
                                             Margin="10"
                                             Foreground="#8E8F96"
                                             Icon="MapSigns" />
@@ -66,7 +74,7 @@
                                     </DockPanel>
                                     <DockPanel Style="{StaticResource MenuDockPanel}">
                                         <fa:ImageAwesome
-                                            Width="15"
+                                            Width="13"
                                             Margin="10"
                                             Foreground="#8E8F96"
                                             Icon="StickyNote" />
@@ -74,7 +82,7 @@
                                     </DockPanel>
                                     <DockPanel Style="{StaticResource MenuDockPanel}">
                                         <fa:ImageAwesome
-                                            Width="15"
+                                            Width="13"
                                             Margin="10"
                                             Foreground="#8E8F96"
                                             Icon="Folder" />
@@ -82,12 +90,6 @@
                                     </DockPanel>
                                 </StackPanel>
                             </Border>
-
-                        </StackPanel>
-                    </Border>
-
-                    <Border Grid.Row="1">
-                        <StackPanel>
                             <TreeView
                                 Margin="0,10"
                                 Background="Transparent"
@@ -95,14 +97,14 @@
                                 <TreeViewItem Header="README.TXT" IsExpanded="True">
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             Foreground="#80848E"
                                             Icon="Book" />
                                         <TreeViewItem Padding="0" Header="information" />
                                     </DockPanel>
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             Foreground="#80848E"
                                             Icon="Bullhorn" />
                                         <TreeViewItem Padding="0" Header="announcements" />
@@ -115,41 +117,44 @@
                                 Margin="0,10"
                                 Background="Transparent"
                                 BorderThickness="0">
-                                <TreeViewItem Header="README.TXT" IsExpanded="True">
+                                <TreeViewItem Header="RYTHM HALL" IsExpanded="True">
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             Foreground="#80848E"
                                             Icon="Bullhorn" />
                                         <TreeViewItem Padding="0" Header="event-announcements" />
                                     </DockPanel>
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             Foreground="#80848E"
                                             Icon="Hashtag" />
                                         <TreeViewItem Padding="0" Header="rythm-lounge" />
                                     </DockPanel>
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             Foreground="#80848E"
                                             Icon="Hashtag" />
                                         <TreeViewItem Padding="0" Header="product-guesses" />
                                     </DockPanel>
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             VerticalAlignment="top"
                                             Foreground="#80848E"
                                             Icon="VolumeUp" />
-                                        <TreeViewItem Padding="0" Header="Rythm Radio">
-                                            <DockPanel Margin="-20,5">
+                                        <TreeViewItem
+                                            Padding="0"
+                                            Header="Rythm Radio"
+                                            IsExpanded="true">
+                                            <DockPanel Margin="-20,15,0,5">
                                                 <fa:ImageAwesome
-                                                    Width="20"
-                                                    Foreground="#80848E"
+                                                    Width="15"
+                                                    Foreground="White"
                                                     Icon="QuestionCircle" />
-                                                <TreeViewItem Padding="0" Header="EDM Radio" />
+                                                <TreeViewItem Header="EDM Radio" />
                                             </DockPanel>
                                         </TreeViewItem>
                                     </DockPanel>
@@ -163,287 +168,96 @@
                                 <TreeViewItem Header="HANGOUT HALL" IsExpanded="True">
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             Foreground="#80848E"
                                             Icon="Hashtag" />
                                         <TreeViewItem Padding="0" Header="off-topic" />
                                     </DockPanel>
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
-                                            Width="20"
+                                            Width="15"
                                             Foreground="#80848E"
                                             Icon="Hashtag" />
                                         <TreeViewItem Padding="0" Header="music-sharing" />
                                     </DockPanel>
-                                    <DockPanel Margin="-20,5">
-                                        <fa:ImageAwesome
-                                            Width="20"
-                                            Foreground="#80848E"
-                                            Icon="Hashtag" />
-                                        <TreeViewItem Padding="0" Header="bot-commands" />
-                                    </DockPanel>
+
                                     <DockPanel Margin="-20,5">
                                         <fa:ImageAwesome
                                             Width="15"
                                             Foreground="#80848E"
+                                            Icon="Hashtag" />
+                                        <RadioButton
+                                            x:Name="ServerChat"
+                                            Margin="8,0"
+                                            Click="PageNavigation_Click"
+                                            Content="bot-commands">
+                                            <RadioButton.Template>
+                                                <ControlTemplate TargetType="{x:Type RadioButton}">
+                                                    <Grid Background="{TemplateBinding Background}">
+                                                        <ContentPresenter
+                                                            Margin="10,5"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </RadioButton.Template>
+                                        </RadioButton>
+                                    </DockPanel>
+                                    <DockPanel Margin="-20,5">
+                                        <fa:ImageAwesome
+                                            Width="15"
+                                            Margin="0,0,5,0"
+                                            Foreground="#80848E"
                                             Icon="Lock" />
-                                        <TreeViewItem Padding="0" Header="Vibes" />
+                                        <TreeViewItem
+                                            Margin="-5,0"
+                                            Padding="0"
+                                            Header="Vibes" />
                                     </DockPanel>
                                 </TreeViewItem>
                             </TreeView>
 
                             <Border
-                                Margin="8,10"
+                                Margin="0,10"
                                 Padding="5"
                                 BorderBrush="#3B3D44"
-                                BorderThickness="0,0,0,1">
-                                <StackPanel>
-                                    <DockPanel Style="{StaticResource MenuDockPanel}">
-                                        <fa:ImageAwesome
-                                            Width="15"
-                                            Margin="10"
-                                            Foreground="#8E8F96"
-                                            Icon="MapSigns" />
-                                        <TextBlock Margin="10" Text="Sunucu Rehberi" />
-                                    </DockPanel>
-                                    <DockPanel Style="{StaticResource MenuDockPanel}">
-                                        <fa:ImageAwesome
-                                            Width="15"
-                                            Margin="10"
-                                            Foreground="#8E8F96"
-                                            Icon="StickyNote" />
-                                        <TextBlock Margin="10" Text="1 Etkinlik" />
-                                    </DockPanel>
-                                    <DockPanel Style="{StaticResource MenuDockPanel}">
-                                        <fa:ImageAwesome
-                                            Width="15"
-                                            Margin="10"
-                                            Foreground="#8E8F96"
-                                            Icon="Folder" />
-                                        <TextBlock Margin="10" Text="Kanallar ve Roller" />
-                                    </DockPanel>
-                                </StackPanel>
-                            </Border>
+                                BorderThickness="0,1,0,0">
+                                <TreeView
+                                    Margin="0,10"
+                                    Background="Transparent"
+                                    BorderThickness="0">
+                                    <TreeViewItem Header="RYTHM HALL" IsExpanded="True">
+                                        <DockPanel Margin="-25,5">
+                                            <fa:ImageAwesome
+                                                Width="15"
+                                                Foreground="#80848E"
+                                                Icon="Users" />
+                                            <TreeViewItem Padding="0" Header="Main Stage" />
+                                        </DockPanel>
+                                    </TreeViewItem>
+                                </TreeView>
 
-                            <!--<dxa:AccordionControl Margin="0,10" Background="Transparent">
-        <dxa:AccordionItem Header="DİREKT MESAJLAR" IsExpanded="True">
-            <DockPanel Margin="-15,0,0,0">
-                <Border
-                    Width="40"
-                    Height="40"
-                    CornerRadius="50">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/eren.jpg" />
-                    </Border.Background>
-                </Border>
-                <TextBlock
-                    Width="auto"
-                    Padding="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource ProfileTextBox}"
-                    Text="Eren" />
-            </DockPanel>
-            <DockPanel Margin="-15,0,0,0">
-                <Border
-                    Width="40"
-                    Height="40"
-                    CornerRadius="50">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/bilal.jpg" />
-                    </Border.Background>
-                </Border>
-                <TextBlock
-                    Width="auto"
-                    Padding="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource ProfileTextBox}"
-                    Text="Bilal" />
-            </DockPanel>
-            <DockPanel Margin="-15,0,0,0">
-                <Border
-                    Width="40"
-                    Height="40"
-                    CornerRadius="50">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/ıronman.jpg" />
-                    </Border.Background>
-                </Border>
-                <TextBlock
-                    Width="auto"
-                    Padding="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource ProfileTextBox}"
-                    Text="Ege" />
-            </DockPanel>
-            <DockPanel Margin="-15,0,0,0">
-                <Border
-                    Width="40"
-                    Height="40"
-                    CornerRadius="50">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/eyup.jpg" />
-                    </Border.Background>
-                </Border>
-                <TextBlock
-                    Width="auto"
-                    Padding="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource ProfileTextBox}"
-                    Text="Eyyüp" />
-            </DockPanel>
-            <DockPanel Margin="-15,0,0,0">
-                <Border
-                    Width="40"
-                    Height="40"
-                    CornerRadius="50">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/profile.jpg" />
-                    </Border.Background>
-                </Border>
-                <TextBlock
-                    Width="auto"
-                    Padding="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource ProfileTextBox}"
-                    Text="Hakan" />
-            </DockPanel>
-            <DockPanel Margin="-15,0,0,0">
-                <Border
-                    Width="40"
-                    Height="40"
-                    CornerRadius="50">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/ghost.jpg" />
-                    </Border.Background>
-                </Border>
-                <TextBlock
-                    Width="auto"
-                    Padding="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource ProfileTextBox}"
-                    Text="Fatih" />
-            </DockPanel>
-            <DockPanel Margin="-15,0,0,0">
-                <Border
-                    Width="40"
-                    Height="40"
-                    CornerRadius="50">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/deadpool.jpg" />
-                    </Border.Background>
-                </Border>
-                <TextBlock
-                    Width="auto"
-                    Padding="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource ProfileTextBox}"
-                    Text="Emre" />
-            </DockPanel>
-        </dxa:AccordionItem>
-    </dxa:AccordionControl>-->
+                            </Border>
                         </StackPanel>
-                    </Border>
-                </StackPanel>
+                    </StackPanel>
+                </Border>
             </ScrollViewer>
+
             <Border
-                Grid.Row="2"
+                Grid.Row="1"
                 Padding="0,0,0,15"
                 VerticalAlignment="Bottom"
-                Panel.ZIndex="99"
-                Background="#292B2F"
+                Background="#232428"
                 Cursor="Hand">
-                <Grid>
-                    <Button
-                        HorizontalAlignment="Left"
-                        Background="Transparent"
-                        BorderThickness="0">
-                        <DockPanel HorizontalAlignment="Left">
-                            <Border
-                                Width="40"
-                                Height="40"
-                                CornerRadius="50">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="/Images/profile400x400.jpg" />
-                                </Border.Background>
-                            </Border>
-                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
-                                <TextBlock
-                                    FontSize="18"
-                                    FontWeight="Bold"
-                                    Foreground="#dce0e3"
-                                    Text="Joker" />
-                                <TextBlock
-                                    FontSize="14"
-                                    FontWeight="Bold"
-                                    Foreground="Gray"
-                                    Text="#0000" />
-                            </StackPanel>
-                        </DockPanel>
-                    </Button>
-                    <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <CheckBox
-                            x:Name="checkBoxMic"
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center">
-                            <CheckBox.Template>
-                                <ControlTemplate TargetType="CheckBox">
-                                    <Grid>
-                                        <fa:ImageAwesome
-                                            x:Name="checkMik"
-                                            Width="13"
-                                            Margin="10,0,5,0"
-                                            Cursor="Hand"
-                                            Foreground="#dce0e3"
-                                            Icon="Microphone" />
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Grid>
-                                </ControlTemplate>
-                            </CheckBox.Template>
-                        </CheckBox>
-
-                        <CheckBox
-                            x:Name="checkBoxHead"
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center">
-                            <CheckBox.Template>
-                                <ControlTemplate TargetType="CheckBox">
-                                    <Grid>
-                                        <fa:ImageAwesome
-                                            x:Name="checkMik"
-                                            Width="16"
-                                            Margin="10,0,5,0"
-                                            Cursor="Hand"
-                                            Foreground="#dce0e3"
-                                            Icon="Headphones" />
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Grid>
-                                </ControlTemplate>
-                            </CheckBox.Template>
-                        </CheckBox>
-
-                        <Button
-                            Padding="0"
-                            Background="Transparent"
-                            BorderThickness="0">
-                            <fa:ImageAwesome
-                                Width="15"
-                                Margin="10,0,5,0"
-                                Cursor="Hand"
-                                Foreground="#dce0e3"
-                                Icon="Gear" />
-                        </Button>
-
-
-                    </DockPanel>
-                </Grid>
+                <Frame
+                    x:Name="ProfileFrame"
+                    Grid.Column="1"
+                    NavigationUIVisibility="Hidden" />
             </Border>
+
+
+
+
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -460,92 +274,68 @@
                             Width="150"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
-                            BorderBrush="#8E8F96"
+                            BorderBrush="#3F4147"
                             BorderThickness="0,0,1,0">
                             <DockPanel>
                                 <fa:ImageAwesome
                                     Width="15"
                                     Margin="10"
                                     Foreground="#DAE1DD"
-                                    Icon="User" />
+                                    Icon="Hashtag" />
                                 <TextBlock
                                     Margin="10"
                                     Foreground="#DAE1DD"
-                                    Text="Arkadaşlar" />
+                                    Text="bot-commands" />
                             </DockPanel>
                         </Border>
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton Margin="5,10" Content="Çevrimiçi">
-                                <RadioButton.Template>
-                                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                                        <Grid Background="{TemplateBinding Background}">
-                                            <ContentPresenter
-                                                Margin="10,5"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center" />
-                                        </Grid>
-                                    </ControlTemplate>
-                                </RadioButton.Template>
-                            </RadioButton>
-                            <RadioButton Margin="5,10" Content="Tümü">
-                                <RadioButton.Template>
-                                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                                        <Grid Background="{TemplateBinding Background}">
-                                            <ContentPresenter
-                                                Margin="10,5"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center" />
-                                        </Grid>
-                                    </ControlTemplate>
-                                </RadioButton.Template>
-                            </RadioButton>
-                            <RadioButton Margin="5,10" Content="Bekleyen">
-                                <RadioButton.Template>
-                                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                                        <Grid Background="{TemplateBinding Background}">
-                                            <ContentPresenter
-                                                Margin="10,5"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center" />
-                                        </Grid>
-                                    </ControlTemplate>
-                                </RadioButton.Template>
-                            </RadioButton>
-                            <RadioButton Margin="5,10" Content="Engellenen">
-                                <RadioButton.Template>
-                                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                                        <Grid Background="{TemplateBinding Background}">
-                                            <ContentPresenter
-                                                Margin="10,5"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center" />
-                                        </Grid>
-                                    </ControlTemplate>
-                                </RadioButton.Template>
-                            </RadioButton>
-                            <RadioButton
+                        <DockPanel Margin="10,0">
+                            <fa:ImageAwesome
+                                Width="15"
+                                Foreground="#55ACEE"
+                                Icon="Android" />
+                            <TextBlock
+                                Margin="5,0,0,0"
                                 VerticalAlignment="Center"
-                                Background="Green"
-                                Content="ArkadaşEkle">
-                                <RadioButton.Template>
-                                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                                        <Grid Background="{TemplateBinding Background}">
-                                            <ContentPresenter
-                                                Margin="10,5"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center" />
-                                        </Grid>
-                                    </ControlTemplate>
-                                </RadioButton.Template>
-                            </RadioButton>
-                        </StackPanel>
+                                Text="Beep boop" />
+                        </DockPanel>
 
                         <DockPanel Margin="0,0,20,0" HorizontalAlignment="Right">
                             <fa:ImageAwesome
                                 Width="20"
                                 Margin="10,0"
-                                Icon="Comment"
+                                Icon="ThList"
                                 Style="{StaticResource HeaderRightIcon}" />
+                            <fa:ImageAwesome
+                                Width="20"
+                                Margin="10,0"
+                                Icon="BellSlash"
+                                Style="{StaticResource HeaderRightIcon}" />
+                            <fa:ImageAwesome
+                                Width="15"
+                                Margin="10,0"
+                                Icon="ThumbTack"
+                                Style="{StaticResource HeaderRightIcon}" />
+                            <fa:ImageAwesome
+                                Width="15"
+                                Margin="10,0"
+                                Icon="Users"
+                                Style="{StaticResource HeaderRightIcon}" />
+                            <DockPanel VerticalAlignment="Center">
+                                <dxe:TextEdit
+                                    Width="195"
+                                    Padding="3"
+                                    Background="#1E1F23"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    CornerRadius="5"
+                                    Foreground="White"
+                                    NullText="Ara" />
+                                <fa:ImageAwesome
+                                    Width="15"
+                                    Margin="-25,0,0,0"
+                                    Foreground="#949BA4"
+                                    Icon="Search" />
+                            </DockPanel>
                             <fa:ImageAwesome
                                 Width="20"
                                 Margin="10,0"
@@ -567,39 +357,348 @@
                     <ColumnDefinition Width="300" />
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" Padding="20,10,15,0">
-
                     <Frame
-                        x:Name="MainPageFrame"
+                        x:Name="ServerPageChatFrame"
                         Grid.Column="1"
                         NavigationUIVisibility="Hidden" />
                 </Border>
                 <Border
                     Grid.Column="1"
+                    Background="#2B2D31"
                     BorderBrush="#404146"
                     BorderThickness="1,0,0,0">
-                    <StackPanel Margin="0,0,20,0">
-                        <TextBlock
-                            Margin="10"
-                            FontSize="16"
-                            FontWeight="bold"
-                            Foreground="#DAE1DD"
-                            Text="Şimdi Aktif" />
-                        <TextBlock
-                            Margin="10"
-                            HorizontalAlignment="Center"
-                            FontSize="14"
-                            FontWeight="bold"
-                            Foreground="#DAE1DD"
-                            Text="Burası Şimdilik Sessiz..." />
-                        <TextBlock
-                            Margin="0"
-                            HorizontalAlignment="Center"
-                            FontSize="13"
-                            FontWeight="Normal"
-                            Foreground="#8E8F96"
-                            Text="Bir arkadaşın, oyun oynamak veya bir sesli sohbete katılmak gibi bir etinliğie başladığında burada göstereceğiz!"
-                            TextWrapping="Wrap" />
-                    </StackPanel>
+                    <ScrollViewer
+                        MinHeight="675"
+                        Margin="15,0,5,0"
+                        VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+
+                            <dxa:AccordionControl Background="Transparent">
+                                <dxa:AccordionItem
+                                    Margin="0,20,0,0"
+                                    Foreground="#949BA4"
+                                    Header="ADMİN - 1"
+                                    IsExpanded="True">
+                                    <DockPanel Margin="-18,0,0,0" Style="{StaticResource MenuDockPanel}">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/baby.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+
+
+                                        <DockPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                Foreground="gold"
+                                                Text="WuSeLeWu " />
+                                            <TextBlock
+                                                HorizontalAlignment="Left"
+                                                FontSize="20"
+                                                Foreground="gold"
+                                                Text="♛" />
+
+                                        </DockPanel>
+                                    </DockPanel>
+
+                                </dxa:AccordionItem>
+                                <dxa:AccordionItem
+                                    Foreground="#949BA4"
+                                    Header="OUR BOTS - 3"
+                                    IsExpanded="True">
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Image Width="40" Source="/Images/botOne.png" />
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <DockPanel>
+                                                <TextBlock Foreground="#5ACDA5" Text="HQ ModMail" />
+                                                <Border
+                                                    Margin="5,0,0,0"
+                                                    Padding="4,0"
+                                                    HorizontalAlignment="Left"
+                                                    Background="#5865F2"
+                                                    CornerRadius="2">
+                                                    <TextBlock Foreground="white" Text="Bot" />
+                                                </Border>
+                                            </DockPanel>
+                                            <TextBlock Text="you ❤️ dinliyor" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Image Width="40" Source="/Images/botOne.png" />
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <DockPanel>
+                                                <TextBlock Foreground="#EE1831" Text="Rythm" />
+                                                <Border
+                                                    Margin="5,0,0,0"
+                                                    Padding="4,0"
+                                                    HorizontalAlignment="Left"
+                                                    Background="#5865F2"
+                                                    CornerRadius="2">
+                                                    <TextBlock Foreground="white" Text="Bot" />
+                                                </Border>
+                                            </DockPanel>
+                                            <TextBlock Text="back soon! Oynuyor" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Image Width="40" Source="/Images/botOne.png" />
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <DockPanel>
+                                                <TextBlock Foreground="#0567E5" Text="Rythm 2" />
+                                                <Border
+                                                    Margin="5,0,0,0"
+                                                    Padding="4,0"
+                                                    HorizontalAlignment="Left"
+                                                    Background="#5865F2"
+                                                    CornerRadius="2">
+                                                    <TextBlock Foreground="white" Text="Bot" />
+                                                </Border>
+                                            </DockPanel>
+                                            <TextBlock Text="back soon! Oynuyor" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                </dxa:AccordionItem>
+                                <dxa:AccordionItem
+                                    Margin="0,20,0,0"
+                                    Foreground="#949BA4"
+                                    Header="MODERATİON STAFF - 3"
+                                    IsExpanded="True">
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/bilal.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+
+
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <TextBlock Foreground="#40D3E8" Text="Bilal" />
+                                            <TextBlock Text="Fitness Oynuyor" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/fatih.png" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <TextBlock Foreground="#40D3E8" Text="Blaine" />
+                                            <TextBlock Text="Rdr2 oynuyor" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/eyup.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#40D3E8" Text="Eyyup" />
+                                            <TextBlock Text="Anime Oynuyor" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                </dxa:AccordionItem>
+                                <dxa:AccordionItem
+                                    Margin="0,20,0,0"
+                                    Foreground="#949BA4"
+                                    Header="VIP+ - 37"
+                                    IsExpanded="True">
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/eren.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+
+
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <TextBlock Foreground="#2D987A" Text="Eren" />
+                                            <TextBlock Text="Hasta" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/deadpool.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <TextBlock Foreground="#2D987A" Text="Emre" />
+
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/ıronman.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#2D987A" Text="Ege" />
+                                            <TextBlock Text="Bilgisayar Bakıyor" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/ghost.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#2D987A" Text="Omer" />
+                                            <TextBlock Text="Mobil Öğrenemiyor" />
+
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/profile400x400.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#2D987A" Text="Joker" />
+
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/profile.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#2D987A" Text="Hakan" />
+
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/profile.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#2D987A" Text="Hakan" />
+
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/profile.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#2D987A" Text="Hakan" />
+
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <DockPanel Margin="-18,0,0,0">
+                                        <Ellipse Width="40" Height="40">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="/Images/profile.jpg" />
+                                            </Ellipse.Fill>
+                                            <Ellipse.Clip>
+                                                <EllipseGeometry
+                                                    Center="50,50"
+                                                    RadiusX="70"
+                                                    RadiusY="70" />
+                                            </Ellipse.Clip>
+                                        </Ellipse>
+                                        <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+
+                                            <TextBlock Foreground="#2D987A" Text="Hakan" />
+
+                                        </StackPanel>
+                                    </DockPanel>
+
+                                </dxa:AccordionItem>
+                            </dxa:AccordionControl>
+
+                        </StackPanel>
+                    </ScrollViewer>
                 </Border>
             </Grid>
         </Grid>

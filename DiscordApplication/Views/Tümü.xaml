@@ -321,7 +321,7 @@
                                         FontSize="14"
                                         FontWeight="Bold"
                                         Foreground="#dce0e3"
-                                        Text="Fatih" />
+                                        Text="Omer" />
                                     <TextBlock
                                         FontSize="11"
                                         FontWeight="Bold"
@@ -373,6 +373,57 @@
                                         FontWeight="Bold"
                                         Foreground="#dce0e3"
                                         Text="Emre" />
+                                    <TextBlock
+                                        FontSize="11"
+                                        FontWeight="Bold"
+                                        Foreground="Gray"
+                                        Text="Çevrim Dışı" />
+                                </StackPanel>
+                            </DockPanel>
+                            <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Border
+                                    Margin="10,0"
+                                    Padding="10,0"
+                                    Background="#2C2D31"
+                                    CornerRadius="50">
+                                    <fa:ImageAwesome
+                                        Height="15"
+                                        Icon="Comment"
+                                        Style="{StaticResource HeaderRightIcon}" />
+                                </Border>
+                                <Border
+                                    Padding="10"
+                                    Background="#2C2D31"
+                                    CornerRadius="50">
+                                    <fa:ImageAwesome
+                                        Width="15"
+                                        Height="15"
+                                        HorizontalAlignment="Center"
+                                        Icon="EllipsisV"
+                                        Style="{StaticResource HeaderRightIcon}" />
+                                </Border>
+
+
+                            </DockPanel>
+                        </Grid>
+                    </Border>
+                    <Border Padding="10" Style="{StaticResource MerkezHoverEffect}">
+                        <Grid>
+                            <DockPanel HorizontalAlignment="Left">
+                                <Border
+                                    Width="40"
+                                    Height="40"
+                                    CornerRadius="50">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/Images/fatih.png" />
+                                    </Border.Background>
+                                </Border>
+                                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock
+                                        FontSize="14"
+                                        FontWeight="Bold"
+                                        Foreground="#dce0e3"
+                                        Text="Blaine" />
                                     <TextBlock
                                         FontSize="11"
                                         FontWeight="Bold"
