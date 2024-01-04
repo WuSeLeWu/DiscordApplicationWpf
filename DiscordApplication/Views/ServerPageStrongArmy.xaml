@@ -73,7 +73,7 @@
                                             Margin="10"
                                             Foreground="#8E8F96"
                                             Icon="MapSigns" />
-                                        <TextBlock Margin="10" Text="Sunucu Rehberi" />
+                                        <TextBlock Margin="10" Text="Server Guide" />
                                     </DockPanel>
                                     <DockPanel Style="{StaticResource MenuDockPanel}">
                                         <fa:ImageAwesome
@@ -81,7 +81,7 @@
                                             Margin="10"
                                             Foreground="#8E8F96"
                                             Icon="StickyNote" />
-                                        <TextBlock Margin="10" Text="1 Etkinlik" />
+                                        <TextBlock Margin="10" Text="1 Event" />
                                     </DockPanel>
                                     <DockPanel Style="{StaticResource MenuDockPanel}">
                                         <fa:ImageAwesome
@@ -89,7 +89,7 @@
                                             Margin="10"
                                             Foreground="#8E8F96"
                                             Icon="Folder" />
-                                        <TextBlock Margin="10" Text="Kanallar ve Roller" />
+                                        <TextBlock Margin="10" Text="Channels  and Roles" />
                                     </DockPanel>
                                 </StackPanel>
                             </Border>
@@ -193,7 +193,8 @@
                                             x:Name="ServerChat"
                                             Margin="8,0"
                                             Click="PageNavigation_Click"
-                                            Content="bot-commands">
+                                            Content="bot-commands"
+                                            IsChecked="True">
                                             <RadioButton.Template>
                                                 <ControlTemplate TargetType="{x:Type RadioButton}">
                                                     <Grid Background="{TemplateBinding Background}">
@@ -319,7 +320,7 @@
                                 Icon="ThumbTack"
                                 Style="{StaticResource HeaderRightIcon}" />
                             <fa:ImageAwesome
-                                Width="15"
+                                Width="18"
                                 Margin="10,0"
                                 Icon="Users"
                                 Style="{StaticResource HeaderRightIcon}" />

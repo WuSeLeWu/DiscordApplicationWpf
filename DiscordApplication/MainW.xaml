@@ -127,7 +127,8 @@
                             x:Name="ServerPageStrongArmy"
                             Width="60"
                             Margin="5,10"
-                            Click="PageNavigation_Click">
+                            Click="PageNavigation_Click"
+                            Style="{StaticResource serverImg}">
                             <RadioButton.Template>
                                 <ControlTemplate TargetType="{x:Type RadioButton}">
                                     <Grid Background="{TemplateBinding Background}">
@@ -144,21 +145,74 @@
                                 </ControlTemplate>
                             </RadioButton.Template>
                         </RadioButton>
-                        <Border Style="{StaticResource SunucuImage}">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Images/146787.jpg" />
-                            </Border.Background>
-                        </Border>
-                        <Border Style="{StaticResource SunucuImage}">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Images/lionpng.png" />
-                            </Border.Background>
-                        </Border>
-                        <Border Style="{StaticResource SunucuImage}">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Images/images.jpg" />
-                            </Border.Background>
-                        </Border>
+                        <RadioButton
+                            x:Name="a"
+                            Width="60"
+                            Margin="5,10"
+                            Click="PageNavigation_Click"
+                            Style="{StaticResource serverImg}">
+                            <RadioButton.Template>
+                                <ControlTemplate TargetType="{x:Type RadioButton}">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <Border Style="{StaticResource SunucuImage}">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Images/146787.jpg" />
+                                            </Border.Background>
+                                        </Border>
+                                        <ContentPresenter
+                                            Margin="10,5"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </RadioButton.Template>
+                        </RadioButton>
+                        <RadioButton
+                            x:Name="b"
+                            Width="60"
+                            Margin="5,10"
+                            Click="PageNavigation_Click"
+                            Style="{StaticResource serverImg}">
+                            <RadioButton.Template>
+                                <ControlTemplate TargetType="{x:Type RadioButton}">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <Border Style="{StaticResource SunucuImage}">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Images/lionpng.png" />
+                                            </Border.Background>
+                                        </Border>
+                                        <ContentPresenter
+                                            Margin="10,5"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </RadioButton.Template>
+                        </RadioButton>
+                        <RadioButton
+                            x:Name="c"
+                            Width="60"
+                            Margin="5,10"
+                            Click="PageNavigation_Click"
+                            Style="{StaticResource serverImg}">
+                            <RadioButton.Template>
+                                <ControlTemplate TargetType="{x:Type RadioButton}">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <Border Style="{StaticResource SunucuImage}">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Images/images.jpg" />
+                                            </Border.Background>
+                                        </Border>
+                                        <ContentPresenter
+                                            Margin="10,5"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </RadioButton.Template>
+                        </RadioButton>
+
+
 
                         <Border Background="#2f3135" Style="{StaticResource SunucuImage}">
                             <fa:ImageAwesome
