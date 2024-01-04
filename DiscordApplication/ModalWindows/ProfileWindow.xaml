@@ -9,7 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ProfileWindow"
     Width="600"
-    Height="684"
+    Height="554"
     AllowsTransparency="True"
     Background="Transparent"
     ResizeMode="NoResize"
@@ -51,7 +51,7 @@
                 <Border
                     Width="170"
                     Height="160"
-                    Margin="15,-20"
+                    Margin="15,-60,0,0"
                     HorizontalAlignment="Left"
                     BorderBrush="#232428"
                     BorderThickness="8"
@@ -61,7 +61,7 @@
                     </Border.Background>
                 </Border>
                 <Border
-                    Margin="22,40"
+                    Margin="22,10,22,40"
                     Padding="10"
                     Background="#111214"
                     CornerRadius="15">
@@ -109,7 +109,7 @@
                                     Foreground="#DBDEE1"
                                     Text="NOT" />
                                 <dxe:TextEdit
-                                    Height="220"
+                                    Height="140"
                                     VerticalContentAlignment="Top"
                                     Background="Transparent"
                                     BorderBrush="Transparent"

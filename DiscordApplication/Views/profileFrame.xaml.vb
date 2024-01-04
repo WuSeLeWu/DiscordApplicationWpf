@@ -10,6 +10,8 @@ Public Class profileFrame
     End Sub
 
     Private Sub ProfileOpen_Click(sender As Object, e As RoutedEventArgs)
+        myPopup.IsOpen = False
+        profileCheckBox.IsChecked = False
         profileWindow = New ProfileWindow()
         profileWindow.ShowDialog()
     End Sub
@@ -44,5 +46,17 @@ Public Class profileFrame
         If checkMik IsNot Nothing Then
             checkMik.Foreground = New SolidColorBrush(Color.FromRgb(220, 224, 227))
         End If
+    End Sub
+
+    Private Sub Close_Click(sender As Object, e As RoutedEventArgs)
+        myPopup.IsOpen = False
+    End Sub
+
+    Private Sub profileCheckBox_Checked(sender As Object, e As RoutedEventArgs)
+        myPopup.IsOpen = True
+    End Sub
+
+    Private Sub profileCheckBox_Unchecked(sender As Object, e As RoutedEventArgs)
+        myPopup.IsOpen = False
     End Sub
 End Class
